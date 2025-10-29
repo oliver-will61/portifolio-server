@@ -1,9 +1,13 @@
 import express from 'express'
+import cors from 'cors'
 import path from 'path'
+
+ 
 
 const app = express()
 
 app.use(express.json());
+app.use(cors())
 app.use(express.static('public'))
 
 const router = express.Router();
@@ -12,7 +16,8 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/index.html'))
 })
 
-// ✅ REGISTRE O ROUTER NA APLICAÇÃO
+//registra rota
 app.use('/', router)
+app.use('/goodbyepdf', router)
 
 export default app;
