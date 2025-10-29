@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import path from 'path'
 
+import goodbypdRouter from './router/goodbyepdfRouter'
  
 
 const app = express()
@@ -18,6 +19,6 @@ router.get('/', (req, res) => {
 
 //registra rota
 app.use('/', router)
-app.use('/goodbyepdf', router)
+app.use('/goodbyepdf', goodbypdRouter)
 
 export default app;

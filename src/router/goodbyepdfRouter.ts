@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import multer from 'multer'
+import path from 'path'
 
 import {xlsxForJsonController} from '../controllers/goodbyepdf/xlsxForJsonController'
 
@@ -20,3 +21,9 @@ const upload = multer({
 router.post('/xlsxForJsonController', upload.single('arquivo'), async (req, res, next) => {
     xlsxForJsonController(req, res).catch(next)   
 })
+
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/html/goodbyepdf/xlsxForJson.html'))
+})
+
+export default router
