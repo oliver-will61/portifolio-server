@@ -28,7 +28,7 @@
                 const formData = new FormData();
                 formData.append('arquivo', arquivo);
 
-                const response = await fetch('http://localhost:3000/xlsx-json', {
+                const response = await fetch('http://localhost:3000/goodbyepdf/xlsx-json', {
                     method: "POST",
                     body: formData
                 });

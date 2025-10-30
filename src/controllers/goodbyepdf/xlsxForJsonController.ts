@@ -14,6 +14,8 @@ export const xlsxForJsonController = async (req: Request, res: Response) => {
 
         console.log("Enviando para a API do Python...");
 
+        console.log(req.file);
+        
         const conversaoService = new ConversaoService
 
         // envia o arquivo para a API de conversão

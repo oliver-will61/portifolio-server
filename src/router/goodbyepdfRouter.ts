@@ -18,7 +18,7 @@ const upload = multer({
 });
 
 
-router.post('/xlsxForJsonController', upload.single('arquivo'), async (req, res, next) => {
+router.post('/xlsx-json', upload.single('arquivo'), async (req, res, next) => {
     xlsxForJsonController(req, res).catch(next)   
 })
 
