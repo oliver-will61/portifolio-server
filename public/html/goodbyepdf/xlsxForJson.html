@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script src="../../js/config.js"></script>
+
 </head>
 <body>
 
@@ -28,7 +30,9 @@
                 const formData = new FormData();
                 formData.append('arquivo', arquivo);
 
-                const response = await fetch('http://localhost:3000/goodbyepdf/xlsx-json', {
+                const endAPI = await config.enderecoAPI 
+
+                const response = await fetch(`${endAPI}/goodbyepdf/xlsx-json`, {
                     method: "POST",
                     body: formData
                 });
@@ -36,7 +40,6 @@
                 //const result = await response.json();
 
                 console.log('Resposta do servidor:', response);
-
                 console.log('Status da resposta:', response.status);
                 console.log('Headers da resposta:', response.headers);
 
