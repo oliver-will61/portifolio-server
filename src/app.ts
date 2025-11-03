@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use(cors({
     origin: 'https://willian-ribeiro.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }))
 
