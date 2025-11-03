@@ -9,7 +9,7 @@ const router = express.Router();
 const app = express();
 
 app.use(express.json())
-app.use(cors);
+app.use(cors());
 
 
 //configuração do multer para tratar arquivos
