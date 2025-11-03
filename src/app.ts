@@ -8,7 +8,12 @@ import goodbypdRouter from './router/goodbyepdfRouter'
 const app = express()
 
 app.use(express.json());
-app.use(cors())
+
+app.use(cors({
+    origin: 'https://willian-ribeiro.com',
+    credentials: true
+}))
+
 app.use(express.static('public'))
 
 const router = express.Router();
